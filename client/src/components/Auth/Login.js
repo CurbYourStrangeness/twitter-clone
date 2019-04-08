@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const Login = () =>
+const Login = () =>(
    <div>
     This is the Login Page
    </div>
