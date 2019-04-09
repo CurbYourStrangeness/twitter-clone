@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 const Register = () => (
     <div>
-      This is the Registration PAge
+      This is the Registration Page
     </div>
 )
 
