@@ -6,10 +6,13 @@ import { withStyles } from '@material-ui/core/styles'
 
 const styles = {
    textField: {
-   width: '100%'
+   width: '100%',
+   marginBottom: 5
  },
  btnBlock: {
-  textAlign: 'center' 
+  textAlign: 'center',
+  marginBottom: 10,
+  marginTop: 20 
  }
 }
 
@@ -25,12 +28,11 @@ class Register extends Component {
     }
   } 
 
-
    render() {
     const { classes } = this.props;
 
     return (
-      <Paper style={{ padding: 8 }}>
+      <Paper style={{ padding: 15 }}>
        <form>
          <TextField 
              type="email"
