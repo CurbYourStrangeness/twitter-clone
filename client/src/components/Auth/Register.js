@@ -7,6 +7,9 @@ import { withStyles } from '@material-ui/core/styles'
 const styles = {
    textField: {
    width: '100%'
+ },
+ btnBlock: {
+  textAlign: 'center' 
  }
 }
 
@@ -27,7 +30,7 @@ class Register extends Component {
     const { classes } = this.props;
 
     return (
-      <Paper>
+      <Paper style={{ padding: 8 }}>
        <form>
          <TextField 
              type="email"
@@ -49,7 +52,11 @@ class Register extends Component {
              type="password"
              className={classes.textField}
           />
-         <Button variant="outlined"/>
+         <div className={classes.btnBlock}>
+            <Button variant="outlined">
+              Submit
+            </Button>
+         </div>
        </form>
       </Paper>
     )
