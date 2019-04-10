@@ -4,12 +4,37 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
 class Register extends Component {
-    render() {
+   constructor (props) {
+      super(props) 
+      this.state = {
+        email:'',
+        login: '',
+        password: '',
+        password2: ''
+    }
+  } 
+
+
+   render() {
     return (
       <Paper>
        <form>
-         <TextField />
-         <TextField />
+         <TextField 
+             type="email"
+             label="Email"
+          />
+         <TextField 
+             label="Login"
+             type="text"
+          />
+          <TextField
+             label="Login"
+             type="text"
+          />
+  <TextField
+             label="Login"
+             type="text"
+          />
          <Button />
        </form>
       </Paper>
