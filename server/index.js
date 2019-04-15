@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 dotenv.config()
 
 //mongo db connect
-mongoose.connect(process.env.MONGODB_URL)
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlparser: true })
 
 const app = express()
 
