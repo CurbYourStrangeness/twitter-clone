@@ -3,7 +3,7 @@ const dotenv = require('dotenv').config({ path: '.env' });
 const mongoose = require('mongoose');
 
 //setup environment
-console.log();
+dotenv.config();
 
 //mongo db connect
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlparser: true });
