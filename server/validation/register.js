@@ -22,6 +22,10 @@ module.exports = function (data){
     if (Validator.isEmpty(data.password)) {
         errors.password = 'Email field is required'
     } 
+ 
+    if (Validator.isEmpty(data.password)){
+        errors.password = ''Password Field is required'
+   }
 
    if (Validator.isLength(data.password, { min: 6, max: 30 })){
        errors.password = 'Password must between 6 and 30 characters'
