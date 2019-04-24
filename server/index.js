@@ -3,10 +3,14 @@ const dotenv = require('dotenv').config({ path: '.env' });
 const mongoose = require('mongoose');
 
 //setup environment
-dotenv.config();
+require('dotenv').config();
 
 //mongo db connect
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlparser: true });
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlparser: true }, err=> { 
+      if(err)
+       console.log(err);
+   }
+);
 
 const app = express();
 
