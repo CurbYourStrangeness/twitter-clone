@@ -3,7 +3,7 @@ const Validator = require('validator')
 module.exports = function (data){
     let errors = {}
    
-    if (!Validator.isEmpty(data.email)){
+    if (!Validator.isEmpty(data.email)) {
        errors.email = 'Email field is required'
     }
 
@@ -23,8 +23,8 @@ module.exports = function (data){
         errors.password = 'Password field is required'
     } 
  
-    if (!Validator.isLength(data.password, { min: 6, max: 30 })){
-        errors.password = 'Password must be ebtween 6 and 30 characterds'
+    if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
+        errors.password = 'Password must be between 6 and 30 characterds'
    }
 
    if (Validator.isEmpty(data.password2)){
