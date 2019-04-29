@@ -1,15 +1,12 @@
 const express = require('express');
-const dotenv = require('dotenv').config({ path: '.env' });
+//const dotenv = require('dotenv').config({ path: '.env' });
 const mongoose = require('mongoose');
 
 //setup environment
 require('dotenv').config();
 
 //mongo db connect
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlparser: true }, err=> { 
-      if(err)
-       console.log(err);
-   }
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlparser: true }
 );
 
 const app = express();
