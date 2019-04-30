@@ -10,6 +10,16 @@ router.route('/register').post((req, res) => {
         }
 
         return res.send('Ok!')
+
+        User.findOne({ email: req.body.email })
+        .then(user=> {
+          if (user) {
+               errors.email='Email was used!'
+              }
+           const newUser = new User({
+                email: req.body.email,
+                login: req.body.login
+            })
       })
 
 module.exports = router
