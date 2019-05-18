@@ -1,16 +1,19 @@
-const express = require('express');
-//const dotenv = require('dotenv').config({ path: '.env' });
-const mongoose = require('mongoose');
+const express = require('express')
+const mongoose = require('mongoose')
+const routes = require('./routes/users')
 
 //setup environment
-require('dotenv').config();
+require('dotenv').config()
 
 //mongo db connect
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlparser: true }
-);
+mongoose.connect(process.env.MONGODB_URL, {
+  useCreateIndex: true,
+  useNewUrlParser: true
+})
 
-const app = express();
+const app = express()
+app.use(routes)
 
 //run app
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => console.log(`server running on port ${PORT}`))
