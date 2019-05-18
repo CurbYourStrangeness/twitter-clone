@@ -9,16 +9,20 @@ router.route('/register').post((req, res) => {
     return res.status(404).json(errors)
   }
 
-  return res.send('Ok!')
+  const { email, login } = req.body
 
-  User.findOne({ email: req.body.email }).then(user => {
+  User.findOne({ email }).then(user => {
     if (user) {
-      errors.email = 'Email was used!'
+      return res.status(422).json('User exists.')
     }
+
     const newUser = new User({
-      email: req.body.email,
-      login: req.body.login
+      email,
+      login
     })
+
+    newUser.save()
+    res.status(201).send('New user created!')
   })
 })
 
