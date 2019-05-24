@@ -15,6 +15,7 @@ router.route('/register').post((req, res) => {
         .then(user=> {
           if (user) {
                errors.email='Email was used!'
+               return res.status(404).json(errors)
               }
            const newUser = new User({
                 email: req.body.email,
