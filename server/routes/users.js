@@ -25,12 +25,12 @@ router.route('/register').post((req, res) => {
                   login: req.body.login,
                   password: hash
                }) 
-             })
-           }) 
-           const newUser = new User({
-                email: req.body.email,
-                login: req.body.login
+                 newUser.save()
+                          .then(newUser => res.json(newUser))
+                          .catch(err => consloe.log(err))
             })
+           }) 
+          })
       })
 
 module.exports = router
