@@ -13,9 +13,11 @@ router.route('/register').post((req, res) => {
 
   User.findOne({ email }).then(user => {
     if (user) {
+      errors.email='Email was used!'
       return res.status(422).json('User exists.')
     }
-
+   bcrypt.genSalt(10, function (err, salt) {
+   bcrypt.hash(req.body.password, salt, function (err, hash) {
     const newUser = new User({
       email,
       login
@@ -23,7 +25,9 @@ router.route('/register').post((req, res) => {
 
     newUser.save()
     res.status(201).send('New user created!')
+    })
+   })
   })
-})
+ })
 
 module.exports = router
